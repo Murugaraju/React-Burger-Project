@@ -1,8 +1,8 @@
 import React,{Component} from 'react';
 import {muscles,exercises} from '../../store';
 import Grid from '@material-ui/core/Grid';
-import LeftPane from '../../components/layout/LeftPane';
-import RightPane from '../../components/layout/RightPane';
+import InventoryList from '../../components/inventorylist/InventoryList';
+import InventoryDetail from '../../components/inventorylist/inventorydetail/InventoryDetail';
 
 class Inventory extends Component{
 
@@ -17,11 +17,11 @@ class Inventory extends Component{
     render(){
         return(
            <Grid container> 
-            <Grid item xs={12} sm={4} lg={4}>
-            <LeftPane data={this.state.data}/>
+            <Grid item xs={12} sm={4} lg={4} >
+            <InventoryList data={this.state.data}/>
             </Grid>
             <Grid item xs={12} sm={8} lg={8}>
-            <RightPane/>
+            <InventoryDetail/>
             </Grid>
            
            </Grid>

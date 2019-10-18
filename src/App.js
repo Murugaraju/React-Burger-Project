@@ -1,16 +1,20 @@
 import React,{Component, Fragment} from 'react';
 import Inventory from './containers/inventory/Inventory';
-import Header from './components/layout/Header';
-import Footer from './components/layout/Footer';
+
+import ProjectLayout from './components/layout/InvetoryAppLayout';
 class App extends Component {
   render(){
     return(
       <Fragment>
-        <Header/>
-        <Inventory/>
-        <Footer/>
+        
+        <ProjectLayout>
+          <Inventory />
+        </ProjectLayout>
+       
       </Fragment>
     );
+
+    
   }
 }
 
