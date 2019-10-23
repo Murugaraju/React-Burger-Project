@@ -26,7 +26,7 @@ class Dashboard extends Component
             <Grid item lg={4} md={4} style={{padding:'13px'}}>
             <Card raised style={{height: '266px'}}>
             <CardContent>
-                    <Typography  variant="paragraph">
+                    <Typography  paragraph>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
               
                      </Typography>
@@ -36,7 +36,7 @@ class Dashboard extends Component
             <Grid item lg={4} md={4} style={{padding:'13px'}} >
             <Card raised style={{height: '266px'}}>
             <CardContent>
-                    <Typography  variant="paragraph">
+                    <Typography  paragraph>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
               
                      </Typography>
@@ -46,7 +46,7 @@ class Dashboard extends Component
             <Grid item lg={4} md={4} style={{padding:'13px'}} >
             <Card raised style={{height: '266px'}}>
             <CardContent>
-                    <Typography  variant="paragraph">
+                    <Typography  paragraph>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
               
                      </Typography>
@@ -60,7 +60,7 @@ class Dashboard extends Component
             <Grid item lg={4} md={4} style={{padding:'13px'}}>
             <Card raised style={{height: '266px'}}>
             <CardContent>
-                    <Typography  variant="paragraph">
+                    <Typography  paragraph>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
               
                      </Typography>
@@ -70,7 +70,7 @@ class Dashboard extends Component
             <Grid item lg={4} md={4} style={{padding:'13px'}} >
             <Card raised style={{height: '266px'}}>
             <CardContent>
-                    <Typography  variant="paragraph">
+                    <Typography  paragraph>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
               
                      </Typography>
@@ -80,7 +80,7 @@ class Dashboard extends Component
             <Grid item lg={4} md={4} style={{padding:'13px'}} >
             <Card raised style={{height: '266px'}}>
             <CardContent>
-                    <Typography  variant="paragraph">
+                    <Typography  paragraph>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
               
                      </Typography>

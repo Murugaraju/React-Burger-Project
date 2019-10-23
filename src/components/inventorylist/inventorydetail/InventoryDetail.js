@@ -16,7 +16,7 @@ const InventoryDetail = props => {
     
         <Card raised style={{height:"90%",margin:"10px"}}>
             <CardContent>
-                <Typography  variant="paragraph">
+                <Typography  paragraph>
                 Lorem ipsum dolor fd sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
           ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum
           facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in hendrerit

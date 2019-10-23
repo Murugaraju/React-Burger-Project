@@ -13,7 +13,7 @@ class Inventory extends Component{
             data:exercises
         };
     }
-
+    // console.log("printing the props ----------->",props)
     render(){
         return(
            <Grid container> 

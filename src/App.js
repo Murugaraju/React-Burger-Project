@@ -18,7 +18,7 @@ class App extends Component {
             <Route path="/inventory" exact component={Inventory} />
             
             <Route path="/pagenotfound" exact componet={PageNotFound}/> 
-            {/* <Route path='*' exact render={()=>{return <Redirect to="/pagenotfound"/> }} /> */}
+            <Route path='*' exact render={()=>{return <Redirect to="/pagenotfound"/> }} />
            
             </ProjectLayout>
 

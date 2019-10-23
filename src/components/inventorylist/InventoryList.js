@@ -35,7 +35,7 @@ function InventoryList(props) {
   if (props.data !== undefined) {
     paneData = props.data.map((dt, i) => {
       return (
-        <Fragment >
+        <Fragment key={i}  >
             
             <ListItem key={i}  button  >
           <Card key={i} raised={true} style={{width:'100%',height:'100%'}}>
