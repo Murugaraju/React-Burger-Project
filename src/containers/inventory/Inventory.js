@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {muscles,exercises} from '../../store';
+import {exercises} from '../../store';
 import Grid from '@material-ui/core/Grid';
 import InventoryList from '../../components/inventorylist/InventoryList';
 import InventoryDetail from '../../components/inventorylist/inventorydetail/InventoryDetail';

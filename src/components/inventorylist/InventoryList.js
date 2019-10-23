@@ -5,11 +5,10 @@ import CardContent from "@material-ui/core/CardContent";
 
 import Divider from "@material-ui/core/Divider";
 import Typography from "@material-ui/core/Typography";
-import Paper from "@material-ui/core/Paper";
+
 import List from '@material-ui/core/List';
 import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
-import AppBar from "@material-ui/core/AppBar";
+// eslint-disable-next-line 
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 
 const useStyles=makeStyles(theme=>({
@@ -19,7 +18,7 @@ const useStyles=makeStyles(theme=>({
     },
     list: {
       
-      [theme.breakpoints.up('md')]: {
+      [theme.breakpoints.up('lg')]: {
         height: 780,
         overflowY:'scroll'
         

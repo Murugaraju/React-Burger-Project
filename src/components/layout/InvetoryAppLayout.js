@@ -6,18 +6,21 @@ import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
+import Readermode from '@material-ui/icons/ChromeReaderMode';
+import Dashboardd  from '@material-ui/icons/Dashboard';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import MailIcon from '@material-ui/icons/Mail';
+// import MailIcon from '@material-ui/icons/Mail';
 import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import AccountBoxIcon from "@material-ui/icons/AccountBox";
 import Button from "@material-ui/core/Button";
+import {Link}  from "react-router-dom";
+
 const drawerWidth = 240;
 
 const useStyles = makeStyles(theme => ({
@@ -57,11 +60,21 @@ function ResponsiveDrawer(props) {
   const { container } = props;
   const classes = useStyles(); 
   const theme = useTheme();
-  const [mobileOpen, setMobileOpen] = React.useState(false);
-    console.log("printing classes from makeStyles",classes)
+  const [stateResponsiveDrawer, setMobileOpen] = React.useState({mobileOpen:false,selectedone:'dashboard'});
+    // console.log("printing classes from makeStyles",classes)
+
+
+  // below const for button icon storge
+  const iconcomponentob={dashboard:<Dashboardd/>,
+                        inventory:<Readermode/>  }  
   const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
+    setMobileOpen((prevState)=>{ return {...prevState,mobileOpen:!prevState.mobileOpen}});
+    // setMobileOpen({...stateResponsiveDrawer, mobileOpen:!stateResponsiveDrawer.mobileOpen})
   };
+
+  const activeLinkItemhandler = (text) =>{
+    return setMobileOpen({...stateResponsiveDrawer,selectedone:text.toLowerCase()});
+  }
 
   const drawer = (
     <div>
@@ -69,12 +82,15 @@ function ResponsiveDrawer(props) {
       <Typography variant="caption" color="inherit" style={{marginLeft:'21px'}}>Menu</Typography>
       </div>
       <Divider />
+      <Divider />
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+        {['Dashboard', 'Inventory'].map((text, index) => (
+          // <Link to={text.toLowerCase()}>
+          <ListItem onClick={ activeLinkItemhandler.bind(this,text)} component={Link} to={text.toLowerCase()} button key={text} selected ={text.toLowerCase()===stateResponsiveDrawer.selectedone}>
+            <ListItemIcon>{iconcomponentob[text.toLowerCase()]}</ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>
+          // </Link>
         ))}
       </List>
       
@@ -101,14 +117,14 @@ function ResponsiveDrawer(props) {
           <Button style={{marginLeft:'auto'}} color="inherit"><strong>Login</strong>  < AccountBoxIcon/></Button>
         </Toolbar>
       </AppBar>
-      <nav className={classes.drawer} aria-label="mailbox folders">
+      <nav className={classes.drawer} aria-label="mailbox folders" >
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
         <Hidden smUp implementation="css">
           <Drawer
             container={container}
             variant="temporary"
             anchor={theme.direction === 'rtl' ? 'right' : 'left'}
-            open={mobileOpen}
+            open={stateResponsiveDrawer.mobileOpen}
             onClose={handleDrawerToggle}
             classes={{
               paper: classes.drawerPaper,
