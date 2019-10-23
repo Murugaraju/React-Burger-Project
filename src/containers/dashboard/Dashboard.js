@@ -16,7 +16,7 @@ class Dashboard extends Component
         return true
     }
     render(){
-        console.log("render dashboard printed")
+        console.log("render dashboard printed",this.props)
         return(
         
         

@@ -19,7 +19,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import AccountBoxIcon from "@material-ui/icons/AccountBox";
 import Button from "@material-ui/core/Button";
-import {Link}  from "react-router-dom";
+import {NavLink}  from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -72,10 +72,11 @@ function ResponsiveDrawer(props) {
     // setMobileOpen({...stateResponsiveDrawer, mobileOpen:!stateResponsiveDrawer.mobileOpen})
   };
 
-  const activeLinkItemhandler = (text) =>{
-    return setMobileOpen({...stateResponsiveDrawer,selectedone:text.toLowerCase()});
-  }
+  
+  console.log("this is ",props.history)
 
+  // selected ={text.toLowerCase()===stateResponsiveDrawer.selectedone}
+  
   const drawer = (
     <div>
       <div className={classes.toolbar} ><Typography variant="h6" color="inherit" style={{marginLeft:'21px',paddingTop:'5px'}}>HPE Inventory</Typography>
@@ -86,17 +87,19 @@ function ResponsiveDrawer(props) {
       <List>
         {['Dashboard', 'Inventory'].map((text, index) => (
           // <Link to={text.toLowerCase()}>
-          <ListItem onClick={ activeLinkItemhandler.bind(this,text)} component={Link} to={text.toLowerCase()} button key={text} selected ={text.toLowerCase()===stateResponsiveDrawer.selectedone}>
+         
+          <ListItem component={NavLink} to={text.toLowerCase()} activeClassName="Mui-selected" button key={text} >
             <ListItemIcon>{iconcomponentob[text.toLowerCase()]}</ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>
+          
           // </Link>
         ))}
       </List>
       
     </div>
   );
-
+  
   return (
     <div className={classes.root}>
       <CssBaseline />
