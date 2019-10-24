@@ -12,7 +12,7 @@ import ListItem from "@material-ui/core/ListItem";
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 
 const useStyles=makeStyles(theme=>({
-  
+   
     root: {
       display: 'flex',
     },
@@ -20,7 +20,7 @@ const useStyles=makeStyles(theme=>({
       
       [theme.breakpoints.up('lg')]: {
         height: 780,
-        overflowY:'scroll'
+        // overflowY:'auto'
         
       },
     },
@@ -63,6 +63,7 @@ function InventoryList(props) {
       {/* </AppBar>  */}
       <br/>
       <Divider />
+      <Divider /> 
       <List  className={classes.list}>
       {paneData}
       </List>
