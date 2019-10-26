@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import InventoryList from '../../components/inventorylist/InventoryList';
 import InventoryDetail from '../../components/inventorylist/inventorydetail/InventoryDetail';
 //react-redux
-import * as actionTypes from '../../store/actions';
+// import * as actionTypes from '../../store/actions';
 import {connect} from 'react-redux';
 class Inventory extends Component{
 
@@ -37,19 +37,20 @@ class Inventory extends Component{
 
 }
 const mapStateToProps =(state)=>{
+    console.log("state from reducer",state)
     return {
         inventory:state.Inventory
     }
 }
 
-const mapDispatchToProps =(dispatch)=>{
-    return{   
-        inventorygetcall:()=>dispatch({type:actionTypes.INVENTORYGET})
-    }
-}
+// const mapDispatchToProps =(dispatch)=>{
+//     return{   
+//         inventorygetcall:()=>dispatch({type:actionTypes.INVENTORYGET})
+//     }
+// }
 
 
-export default connect(mapStateToProps,mapDispatchToProps)(Inventory);
+export default connect(mapStateToProps,null)(Inventory);
 //if don't want state
 //export default connect(null,mapDispatchToProps)(Inventory);
 

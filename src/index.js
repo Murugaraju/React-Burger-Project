@@ -5,16 +5,11 @@ import App from './App';
 import {BrowserRouter as Router} from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 //redux and react-redux
-import {createStore,combineReducers} from 'redux';
+import store from './storem';
 import {Provider} from 'react-redux';
-import InventoryReducer from './store/reducers/inventory';
+
  
-const rootReducer=combineReducers(
-    {
-        Inventory:InventoryReducer
-    }
-);
-const store = createStore(rootReducer);
+
 
 const app=(
     <Provider store={store}><Router><App /></Router></Provider>
