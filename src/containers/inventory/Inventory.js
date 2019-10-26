@@ -3,8 +3,12 @@ import {exercises} from '../../store';
 import Grid from '@material-ui/core/Grid';
 import InventoryList from '../../components/inventorylist/InventoryList';
 import InventoryDetail from '../../components/inventorylist/inventorydetail/InventoryDetail';
+import store from '../../storem';
+import {inventoryGet} from '../../apis/inventory_api';
 //react-redux
-// import * as actionTypes from '../../store/actions';
+import * as actionTypes from '../../store/actions';
+import CircularProgress from '@material-ui/core/CircularProgress';
+
 import {connect} from 'react-redux';
 class Inventory extends Component{
 
@@ -16,7 +20,11 @@ class Inventory extends Component{
         };
     }
     componentDidMount(){
-        // this.props.inventorygetcall()     
+        // this.props.inventorygetcall() 
+        inventoryGet()
+
+        
+           
     }
     
     render(){
@@ -25,7 +33,10 @@ class Inventory extends Component{
            
            <Grid container> 
             <Grid item xs={12} sm={4} lg={4} >
-            <InventoryList data={this.props.inventory.inventorydata}/>
+            {this.props.inventory.loading===false?<InventoryList data={this.props.inventory.inventorydata}/>
+            :<CircularProgress/>
+            }
+            
             </Grid>
             <Grid item xs={12} sm={8} lg={8}>
             <InventoryDetail/>
