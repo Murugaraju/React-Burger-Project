@@ -43,6 +43,7 @@ class Dashboard extends Component
                    </Typography>
                      <div style={classes}>
                      {this.props.dashboard.loading?<CircularProgress/> :
+                    this.props.dashboard.error.isError?<p style={{color:'red'}}><strong>Error happend {this.props.dashboard.error.errordata}</strong></p>:
                     <h1>{this.props.dashboard.dashboarddata.total}</h1>
                     }
                             

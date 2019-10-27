@@ -3,7 +3,8 @@ import * as actionTypes from '../actions';
 
 const initialState ={
     loading:false,
-    dashboarddata:{}
+    dashboarddata:{},
+    error:{isError:false,errorData:null}
 }
 
 const dashboardReducer= (state=initialState,action)=>{
@@ -23,6 +24,17 @@ const dashboardReducer= (state=initialState,action)=>{
                 loading:false,
                 dashboarddata:action.data,
                 
+            }
+        case actionTypes.DASHBOARDGETFAILURE:
+            return {
+                ...state,
+                loading:false,
+                error:{isError:true,
+                    errorData:action.errordata
+                
+                
+                }
+
             }
         default:
             return initialState
