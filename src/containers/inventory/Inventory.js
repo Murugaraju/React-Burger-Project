@@ -3,10 +3,10 @@ import {exercises} from '../../store';
 import Grid from '@material-ui/core/Grid';
 import InventoryList from '../../components/inventorylist/InventoryList';
 import InventoryDetail from '../../components/inventorylist/inventorydetail/InventoryDetail';
-import store from '../../storem';
+// import store from '../../storem';
 import {inventoryGet} from '../../apis/inventory_api';
 //react-redux
-import * as actionTypes from '../../store/actions';
+// import * as actionTypes from '../../store/actions';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 import {connect} from 'react-redux';

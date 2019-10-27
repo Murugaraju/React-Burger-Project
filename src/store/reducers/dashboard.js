@@ -3,7 +3,7 @@ import * as actionTypes from '../actions';
 
 const initialState ={
     loading:false,
-    inventorydata:[]
+    dashboarddata:{}
 }
 
 const dashboardReducer= (state=initialState,action)=>{
@@ -17,9 +17,12 @@ const dashboardReducer= (state=initialState,action)=>{
               
             }
         case actionTypes.DASHBOARDGETSUCCESS:
+        console.log("In dashboard api succes ",action)
             return {
                 ...state,
-                inventorydata:'came'
+                loading:false,
+                dashboarddata:action.data,
+                
             }
         default:
             return initialState

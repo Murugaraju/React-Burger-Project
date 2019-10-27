@@ -20,7 +20,7 @@ const useStyles=makeStyles(theme=>({
       
       [theme.breakpoints.up('lg')]: {
         height: 780,
-        // overflowY:'auto'
+        overflowY:'auto'
         
       },
     },

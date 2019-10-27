@@ -8,6 +8,7 @@ export const dashboardGet = ()=>{
     .then(
        (result)=>{
            console.log("get call result",result)
+           store.dispatch({type:actionTypes.DASHBOARDGETSUCCESS,data:result.data})
        }
     )
 return null;
