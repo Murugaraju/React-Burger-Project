@@ -35,6 +35,7 @@ const useStyles = makeStyles(theme => ({
   },
   appBar: {
     marginLeft: drawerWidth,
+    backgroundColor:'#508e60',
     [theme.breakpoints.up('sm')]: {
       width: `calc(100% - ${drawerWidth}px)`,
     },
@@ -48,6 +49,8 @@ const useStyles = makeStyles(theme => ({
   toolbar: theme.mixins.toolbar,
   drawerPaper: {
     width: drawerWidth,
+    backgroundColor:'#508e60',
+    color:'white'
   },
   content: {
     flexGrow: 1,
@@ -65,8 +68,8 @@ function ResponsiveDrawer(props) {
 
 
   // below const for button icon storge
-  const iconcomponentob={dashboard:<Dashboardd/>,
-                        inventory:<Readermode/>  }  
+  const iconcomponentob={dashboard:<Dashboardd style={{color:'blue'}}/>,
+                        inventory:<Readermode style={{color:'yellow'}}/>  }  
   const handleDrawerToggle = () => {
     setMobileOpen((prevState)=>{ return {...prevState,mobileOpen:!prevState.mobileOpen}});
     // setMobileOpen({...stateResponsiveDrawer, mobileOpen:!stateResponsiveDrawer.mobileOpen})
@@ -78,13 +81,13 @@ function ResponsiveDrawer(props) {
   // selected ={text.toLowerCase()===stateResponsiveDrawer.selectedone}
   
   const drawer = (
-    <div>
+    <div  > 
       <div className={classes.toolbar} ><Typography variant="h6" color="inherit" style={{marginLeft:'21px',paddingTop:'5px'}}>HPE Inventory</Typography>
       <Typography variant="caption" color="inherit" style={{marginLeft:'21px'}}>Menu</Typography>
       </div>
       <Divider />
-      <Divider />
-      <List>
+      
+      <List >
         {['Dashboard', 'Inventory'].map((text, index) => (
           // <Link to={text.toLowerCase()}>
          
@@ -102,8 +105,8 @@ function ResponsiveDrawer(props) {
   
   return (
     <div className={classes.root}>
-      <CssBaseline />
-      <AppBar position="fixed" className={classes.appBar}>
+     
+      <AppBar position="fixed" className={classes.appBar} >
         <Toolbar>
           <IconButton
             color="inherit"
@@ -120,10 +123,11 @@ function ResponsiveDrawer(props) {
           <Button style={{marginLeft:'auto'}} color="inherit"><strong>Login</strong>  < AccountBoxIcon/></Button>
         </Toolbar>
       </AppBar>
-      <nav className={classes.drawer} aria-label="mailbox folders" >
+      <nav className={classes.drawer} aria-label="mailbox folders"   >
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-        <Hidden smUp implementation="css">
+        <Hidden smUp implementation="css" >
           <Drawer
+          
             container={container}
             variant="temporary"
             anchor={theme.direction === 'rtl' ? 'right' : 'left'}
