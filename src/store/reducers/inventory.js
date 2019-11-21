@@ -22,7 +22,7 @@ const inventoryReducer= (state=initialState,action)=>{
             inventorydata:state.inventorydata.concat(exercises)
         }
         default:
-            return initialState
+            return state;
     }
 
 
